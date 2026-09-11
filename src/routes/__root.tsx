@@ -77,10 +77,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "UnderlineTec" },
+      { title: "Underline" },
       { name: "description", content: "Tecnologia e automação comercial orientadas a resultado." },
-      { name: "author", content: "UnderlineTec" },
-      { property: "og:title", content: "UnderlineTec" },
+      { name: "author", content: "Underline" },
+      { property: "og:title", content: "Underline" },
       { property: "og:description", content: "Tecnologia e automação comercial orientadas a resultado." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

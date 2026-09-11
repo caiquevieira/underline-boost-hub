@@ -8,6 +8,7 @@ import {
   Check,
   ChevronRight,
   Code2,
+  Download,
   Menu,
   MessageCircle,
   MousePointerClick,
@@ -20,39 +21,37 @@ import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import caiquePhoto from "@/assets/caique-vieira.png.asset.json";
+import professionalProfile from "@/assets/historico-profissional-caique-vieira.pdf.asset.json";
 
 const whatsapp =
-  "https://wa.me/5511967742489?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20as%20soluções%20da%20UnderlineTec!";
+  "https://wa.me/5511967742489?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20as%20soluções%20da%20Underline!";
 
 const navItems = [
   { label: "Serviços", href: "#servicos" },
+  { label: "Projetos", href: "#projetos" },
+  { label: "Liderança", href: "#lideranca" },
   { label: "Roadmap", href: "#roadmap" },
-  { label: "Portfólio", href: "#portfolio" },
-  { label: "Sobre", href: "#sobre" },
 ];
 
-const categories = ["Todos", "Beleza & Estética", "Pet Care", "Buffet & Eventos", "Saúde & Educação"] as const;
-type Category = (typeof categories)[number];
-
 const projects = [
-  { name: "Toca do Panda Buffet", category: "Buffet & Eventos", url: "https://tocadopandabuffet.com.br/", theme: "panda", kicker: "Festas inesquecíveis", shape: "PA" },
-  { name: "Studio MK | Beleza Mulher", category: "Beleza & Estética", url: "https://mk-beauty-luxe.lovable.app/", theme: "beauty", kicker: "Beleza que revela você", shape: "MK" },
-  { name: "Studio Elegante", category: "Beleza & Estética", url: "https://studio-elegante-booking.lovable.app", theme: "elegante", kicker: "Sua melhor versão", shape: "SE" },
-  { name: "Lou Lou Pet Haven", category: "Pet Care", url: "https://lou-lou-pet-haven.lovable.app", theme: "pet", kicker: "Cuidado com afeto", shape: "LL" },
-  { name: "Araicas Vet", category: "Pet Care", url: "https://araicas-vet-charm.lovable.app/", theme: "vet", kicker: "Saúde em boas mãos", shape: "AV" },
-  { name: "Corpilates Balance", category: "Saúde & Educação", url: "https://corpilates-balance-health.lovable.app/", theme: "pilates", kicker: "Movimento e equilíbrio", shape: "CB" },
-  { name: "Eleve Dance Studio", category: "Saúde & Educação", url: "https://eleve-dance-art-hub.lovable.app/", theme: "dance", kicker: "Arte em movimento", shape: "ED" },
+  { name: "Toca do Panda Buffet", category: "Buffet & Eventos", url: "https://tocadopandabuffet.com.br/", initials: "TP", index: "01" },
+  { name: "Studio MK | Beleza Mulher", category: "Beleza & Estética", url: "https://mk-beauty-luxe.lovable.app/", initials: "MK", index: "02" },
+  { name: "Studio Elegante", category: "Beleza & Estética", url: "https://studio-elegante-booking.lovable.app", initials: "SE", index: "03" },
+  { name: "Lou Lou Pet Haven", category: "Pet Care", url: "https://lou-lou-pet-haven.lovable.app", initials: "LL", index: "04" },
+  { name: "Araicas Vet", category: "Pet Care", url: "https://araicas-vet-charm.lovable.app/", initials: "AV", index: "05" },
+  { name: "Corpilates Balance", category: "Saúde & Educação", url: "https://corpilates-balance-health.lovable.app/", initials: "CB", index: "06" },
 ] as const;
 
 function Brand({ compact = false }: { compact?: boolean }) {
   return (
-    <a href="#topo" className="group flex shrink-0 items-center gap-3" aria-label="UnderlineTec — início">
-      <svg className={compact ? "h-9 w-9" : "h-10 w-10"} viewBox="0 0 48 48" role="img" aria-label="Símbolo UnderlineTec">
+    <a href="#topo" className="group flex shrink-0 items-center gap-3" aria-label="Underline — início">
+      <svg className={compact ? "h-9 w-9" : "h-10 w-10"} viewBox="0 0 48 48" role="img" aria-label="Símbolo Underline">
         <rect width="48" height="48" rx="6" className="fill-primary" />
         <path d="M15 12v12.5c0 6.4 3.1 10 8.8 10 3.5 0 6.1-1.5 8.2-4.3V12h-5v12.4c0 3.6-1.4 5.5-4 5.5-2.1 0-3-1.5-3-5.3V12h-5Z" className="fill-primary-foreground" />
         <path d="M13 39h22" className="stroke-primary-foreground" strokeWidth="3" />
       </svg>
-      <span className="text-lg font-extrabold text-foreground">Underline<span className="text-primary">Tec</span></span>
+      <span className="text-lg font-extrabold text-foreground"><span className="text-primary">Under</span>line.</span>
     </a>
   );
 }
@@ -65,27 +64,12 @@ function WhatsAppButton({ children, className }: { children: React.ReactNode; cl
   );
 }
 
-function BrowserMockup({ project }: { project: (typeof projects)[number] }) {
-  return (
-    <div className={cn("project-mockup", `project-${project.theme}`)}>
-      <div className="browser-bar"><i /><i /><i /><span>{project.name.toLowerCase().replaceAll(" ", "").slice(0, 18)}.com.br</span></div>
-      <div className="mockup-body">
-        <div className="mockup-nav"><b>{project.shape}</b><span /><span /><span /></div>
-        <div className="mockup-content">
-          <div><small>{project.category}</small><strong>{project.kicker}</strong><em>Conheça uma experiência feita para você.</em><i /></div>
-          <b className="mockup-orbit">{project.shape}</b>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "UnderlineTec | Tecnologia que converte" },
+      { title: "Underline | Engenharia de vendas e presença digital" },
       { name: "description", content: "Landing pages de alta conversão, inteligência de satisfação e automação comercial para acelerar sua operação." },
-      { property: "og:title", content: "UnderlineTec | Tecnologia que converte" },
+      { property: "og:title", content: "Underline | Engenharia de vendas e presença digital" },
       { property: "og:description", content: "Transformamos atendimento e presença digital em receita para o seu negócio." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -96,8 +80,6 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [filter, setFilter] = useState<Category>("Todos");
-  const filteredProjects = filter === "Todos" ? projects : projects.filter((project) => project.category === filter);
 
   return (
     <div id="topo" className="min-h-screen overflow-hidden bg-background text-foreground">
@@ -128,11 +110,11 @@ function Index() {
           <div className="relative mx-auto grid min-h-[680px] max-w-7xl items-center gap-16 px-5 py-20 sm:px-8 lg:grid-cols-[1.08fr_.92fr] lg:px-10">
             <div className="animate-fade-in max-w-3xl">
               <div className="mb-7 inline-flex items-center gap-2 border border-primary/30 bg-primary/5 px-3 py-2 text-xs font-bold text-primary"><span className="h-1.5 w-1.5 bg-primary" /> TECNOLOGIA & AUTOMAÇÃO COMERCIAL</div>
-              <h1 className="max-w-4xl text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-6xl xl:text-7xl">Transformamos atendimento e presença digital em <span className="text-primary">receita</span> para o seu negócio.</h1>
-              <p className="mt-7 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">Desenvolvimento de páginas de alta conversão, gestão de inteligência de satisfação e soluções automatizadas para acelerar sua operação.</p>
+               <h1 className="max-w-4xl text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-6xl xl:text-7xl">Engenharia de Vendas, Atendimento e <span className="text-primary">Presença Digital.</span></h1>
+               <p className="mt-7 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">Desenvolvimento de páginas de alta conversão, gestão de inteligência de satisfação e soluções automatizadas para escalar seu negócio.</p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <WhatsAppButton><MessageCircle /> Solicitar Diagnóstico Gratuito</WhatsAppButton>
-                <Button asChild variant="outline" size="lg" className="h-12 rounded-sm border-border bg-transparent px-6 font-bold hover:border-primary hover:bg-primary/5 hover:text-primary"><a href="#portfolio">Ver Portfólio de Projetos <ArrowRight /></a></Button>
+                 <Button asChild variant="outline" size="lg" className="h-12 rounded-sm border-border bg-transparent px-6 font-bold hover:border-primary hover:bg-primary/5 hover:text-primary"><a href="#projetos">Ver Portfólio de Projetos <ArrowRight /></a></Button>
               </div>
               <div className="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-xs font-semibold text-muted-foreground">
                 <span className="flex items-center gap-2"><Check className="text-primary" /> Estratégia orientada a ROI</span>
@@ -164,40 +146,39 @@ function Index() {
           </div>
         </section>
 
-        <section id="roadmap" className="relative scroll-mt-20 border-b border-border bg-secondary/25 py-24 sm:py-32">
-          <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-            <SectionHeading eyebrow="ROADMAP UNDERLINETEC" title="O Futuro do Seu Atendimento e Vendas" text="Soluções em desenvolvimento exclusivo pela UnderlineTec." />
-            <div className="mt-14 grid gap-5 lg:grid-cols-2">
-              <RoadmapCard icon={<Bot />} title="Atendimento Inteligente no WhatsApp com Integração CRM" text="Automação de conversas, distribuição de leads e sincronização direta com seu funil comercial." points={["Distribuição automática de leads", "Histórico centralizado no CRM", "Atendimento disponível 24/7"]} />
-              <RoadmapCard icon={<CalendarCheck2 />} title="Sistema de Agendamento Online Automatizado" text="Redução de faltas e agendamentos diretos pelo cliente, com autonomia total 24 horas por dia." points={["Lembretes automáticos", "Agenda sempre atualizada", "Menos no-show, mais receita"]} />
-            </div>
-            <div className="mt-10 text-center"><WhatsAppButton><Sparkles /> Entrar na Lista VIP no WhatsApp</WhatsAppButton></div>
-          </div>
-        </section>
-
-        <section id="portfolio" className="scroll-mt-20 border-b border-border py-24 sm:py-32">
+         <section id="projetos" className="scroll-mt-20 border-b border-border py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
             <SectionHeading eyebrow="TRABALHOS SELECIONADOS" title="Projetos Desenvolvidos & Casos de Sucesso" text="Páginas de alta conversão projetadas sob medida para acelerar vendas nos principais nichos de serviços." />
-            <div className="mt-10 flex gap-2 overflow-x-auto pb-3" role="group" aria-label="Filtrar projetos por categoria">
-              {categories.map((category) => <Button key={category} variant="outline" size="sm" onClick={() => setFilter(category)} aria-pressed={filter === category} className={cn("shrink-0 rounded-sm border-border bg-transparent text-muted-foreground", filter === category && "border-primary bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground")}>{category}</Button>)}
-            </div>
-            <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-              {filteredProjects.map((project) => (
-                <article key={project.name} className="group overflow-hidden border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/50">
-                  <BrowserMockup project={project} />
-                  <div className="p-5"><span className="text-[10px] font-bold uppercase text-primary">{project.category}</span><div className="mt-2 flex items-end justify-between gap-4"><h3 className="text-lg font-bold">{project.name}</h3><a href={project.url} target="_blank" rel="noreferrer" className="grid h-10 w-10 shrink-0 place-items-center border border-border text-muted-foreground transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground" aria-label={`Acessar ${project.name}`} title="Acessar Projeto Live"><ArrowUpRight className="h-4 w-4" /></a></div><a href={project.url} target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 text-xs font-bold text-muted-foreground transition-colors hover:text-primary">Acessar Projeto Live <ChevronRight className="h-3.5 w-3.5" /></a></div>
+             <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+               {projects.map((project) => (
+                 <article key={project.name} className="project-card group relative flex min-h-72 flex-col overflow-hidden border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 sm:p-7">
+                   <div className="flex items-start justify-between gap-4"><span className="border border-primary/30 bg-primary/5 px-2.5 py-1 text-[10px] font-bold uppercase text-primary">{project.category}</span><span className="text-xs font-bold text-muted-foreground">{project.index}</span></div>
+                   <div className="mt-10 text-5xl font-extrabold text-foreground/10 transition-colors group-hover:text-primary/20" aria-hidden="true">{project.initials}</div>
+                   <h3 className="mt-auto pt-8 text-xl font-bold leading-snug">{project.name}</h3>
+                   <a href={project.url} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center justify-between border-t border-border pt-5 text-xs font-bold text-muted-foreground transition-colors hover:text-primary" aria-label={`Acessar ${project.name} em nova aba`}>Acessar Projeto Live <ArrowUpRight className="h-4 w-4" /></a>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="sobre" className="scroll-mt-20 border-b border-border bg-secondary/25 py-24 sm:py-32">
-          <div className="mx-auto grid max-w-7xl gap-14 px-5 sm:px-8 lg:grid-cols-[.8fr_1.2fr] lg:px-10">
-            <div><span className="section-kicker">POR QUE UNDERLINETEC</span><h2 className="mt-5 text-3xl font-extrabold leading-tight sm:text-5xl">Tecnologia com foco em <span className="text-primary">Resultado Real</span></h2></div>
-            <div className="lg:border-l lg:border-border lg:pl-14"><Quote className="h-9 w-9 text-primary" /><p className="mt-7 text-xl font-medium leading-relaxed sm:text-2xl">Unimos inteligência de processos, experiência em BPO, análise de dados e engenharia de software para criar soluções que não apenas impressionam — elas geram retorno.</p><p className="mt-6 max-w-2xl leading-8 text-muted-foreground">Cada projeto começa com uma leitura profunda da operação e termina com uma experiência digital objetiva, mensurável e construída para reduzir atritos entre a sua marca e o próximo cliente.</p><div className="mt-10 grid grid-cols-3 border-y border-border py-7"><Metric value="4" label="frentes integradas" /><Metric value="100%" label="foco no negócio" /><Metric value="1:1" label="atendimento próximo" /></div></div>
+         <section id="lideranca" className="scroll-mt-20 border-b border-border bg-secondary/25 py-24 sm:py-32">
+           <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-5 sm:px-8 lg:grid-cols-12 lg:px-10">
+             <div className="lg:col-span-4"><div className="leadership-photo relative overflow-hidden rounded-lg border border-primary/30"><img src={caiquePhoto.url} alt="Retrato profissional de Caíque Vieira" className="aspect-square w-full object-cover grayscale" loading="lazy" /></div></div>
+             <div className="lg:col-span-8 lg:pl-10"><span className="section-kicker">LIDERANÇA E ENGENHARIA DE PROCESSOS</span><h2 className="mt-5 text-4xl font-extrabold sm:text-5xl">Caíque Vieira</h2><p className="mt-3 text-base font-bold leading-7 text-primary sm:text-lg">Founder & Lead Strategist na Underline | Gerente de Projetos & Especialista em CX/BI</p><p className="mt-6 max-w-3xl text-base leading-8 text-muted-foreground sm:text-lg">Mais de 10 anos liderando governança de projetos, estruturação de operações de alta complexidade em BPO e inteligência de dados. A Underline nasce da união entre estratégia operacional de grande porte, automação de processos e arquitetura de páginas focadas em geração de receita real.</p><div className="mt-7 flex flex-wrap gap-2">{["Gestão de Projetos", "Power BI & Dataverse", "Six Sigma Yellow Belt", "Automação B2B"].map((skill) => <span key={skill} className="border border-border bg-background px-3 py-2 text-xs font-semibold text-muted-foreground">{skill}</span>)}</div><Button asChild variant="outline" size="lg" className="mt-8 h-auto min-h-12 whitespace-normal rounded-sm border-primary/40 bg-transparent px-5 py-3 text-left font-bold hover:bg-primary hover:text-primary-foreground"><a href={professionalProfile.url} download="Historico-Profissional-Caique-Vieira.pdf"><Download /> Download do Histórico Profissional (PDF)</a></Button></div>
           </div>
         </section>
+
+         <section id="roadmap" className="relative scroll-mt-20 border-b border-border py-24 sm:py-32">
+           <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+             <SectionHeading eyebrow="ROADMAP UNDERLINE" title="O Futuro do Seu Atendimento e Vendas" text="Soluções em desenvolvimento exclusivo pela Underline." />
+             <div className="mt-14 grid gap-5 lg:grid-cols-2">
+               <RoadmapCard icon={<Bot />} title="Atendimento Inteligente no WhatsApp com CRM" text="Automação de conversas, distribuição de leads e sincronização direta com seu funil comercial." points={["Distribuição automática de leads", "Histórico centralizado no CRM", "Atendimento disponível 24/7"]} />
+               <RoadmapCard icon={<CalendarCheck2 />} title="Agendamento Online Automatizado" text="Redução de faltas e agendamentos diretos pelo cliente, com autonomia total 24 horas por dia." points={["Lembretes automáticos", "Agenda sempre atualizada", "Menos no-show, mais receita"]} />
+             </div>
+             <div className="mt-10 text-center"><WhatsAppButton><Sparkles /> Garantir Condição VIP de Lançamento</WhatsAppButton></div>
+           </div>
+         </section>
 
         <section className="relative py-24 sm:py-32">
           <div className="hero-grid absolute inset-0 opacity-50" />
@@ -205,7 +186,7 @@ function Index() {
         </section>
       </main>
 
-      <footer className="border-t border-border bg-card py-10"><div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-10"><Brand compact /><nav className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted-foreground">{navItems.map((item) => <a key={item.href} href={item.href} className="hover:text-primary">{item.label}</a>)}</nav><p className="text-xs text-muted-foreground">© 2026 UnderlineTec. Todos os direitos reservados.</p></div></footer>
+       <footer className="border-t border-border bg-card py-10"><div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-10"><Brand compact /><nav className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted-foreground">{navItems.map((item) => <a key={item.href} href={item.href} className="hover:text-primary">{item.label}</a>)}</nav><p className="max-w-sm text-xs leading-5 text-muted-foreground">© Underline. Todos os direitos reservados. Tecnologia e Estratégia de Vendas.</p></div></footer>
     </div>
   );
 }
