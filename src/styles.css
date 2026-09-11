@@ -79,33 +79,10 @@ body { margin: 0; background: var(--color-background); color: var(--color-foregr
 .service-card::after { content: ""; position: absolute; inset: auto 0 0; height: 2px; background: var(--color-primary); transform: scaleX(0); transform-origin: left; transition: transform .35s ease; }
 .service-card:hover::after { transform: scaleX(1); }
 
-.project-mockup { height: 245px; padding: 18px 18px 0; background: var(--mock-bg); overflow: hidden; }
-.browser-bar { height: 25px; display: flex; align-items: center; gap: 5px; padding: 0 9px; background: color-mix(in oklab, var(--mock-dark) 92%, white); color: var(--mock-light); }
-.browser-bar i { width: 4px; height: 4px; border-radius: 50%; background: currentColor; opacity: .65; }
-.browser-bar span { margin-left: 6px; max-width: 60%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 6px; opacity: .5; }
-.mockup-body { height: 218px; background: var(--mock-light); color: var(--mock-dark); }
-.mockup-nav { height: 38px; display: flex; align-items: center; gap: 14px; padding: 0 16px; border-bottom: 1px solid color-mix(in oklab, var(--mock-dark) 9%, transparent); }
-.mockup-nav b { margin-right: auto; font-size: 8px; }
-.mockup-nav span { width: 24px; height: 2px; background: var(--mock-dark); opacity: .2; }
-.mockup-content { display: grid; grid-template-columns: 1.15fr .85fr; align-items: center; height: 180px; padding: 20px 22px; position: relative; overflow: hidden; }
-.mockup-content small { display: block; color: var(--mock-accent); font-size: 6px; font-weight: 800; text-transform: uppercase; }
-.mockup-content strong { display: block; max-width: 130px; margin-top: 7px; font-size: 17px; line-height: 1.08; }
-.mockup-content em { display: block; max-width: 125px; margin-top: 8px; font-size: 6px; font-style: normal; opacity: .55; }
-.mockup-content > div > i { display: block; width: 44px; height: 13px; margin-top: 12px; background: var(--mock-accent); }
-.mockup-orbit { display: grid; place-items: center; aspect-ratio: 1; border-radius: 50%; background: var(--mock-accent); color: var(--mock-accent-text); font-size: 25px; box-shadow: 18px 18px 0 color-mix(in oklab, var(--mock-accent) 22%, transparent); transform: rotate(-6deg); }
-.project-panda { --mock-bg: oklch(0.86 0.16 92); --mock-light: oklch(0.98 0.03 95); --mock-dark: oklch(0.22 0.04 55); --mock-accent: oklch(0.66 0.18 48); --mock-accent-text: white; }
-.project-beauty { --mock-bg: oklch(0.82 0.07 15); --mock-light: oklch(0.97 0.02 20); --mock-dark: oklch(0.24 0.05 8); --mock-accent: oklch(0.5 0.13 15); --mock-accent-text: white; }
-.project-elegante { --mock-bg: oklch(0.32 0.03 75); --mock-light: oklch(0.95 0.02 85); --mock-dark: oklch(0.2 0.03 70); --mock-accent: oklch(0.62 0.1 72); --mock-accent-text: white; }
-.project-pet { --mock-bg: oklch(0.79 0.09 174); --mock-light: oklch(0.97 0.025 150); --mock-dark: oklch(0.25 0.05 175); --mock-accent: oklch(0.64 0.12 176); --mock-accent-text: white; }
-.project-vet { --mock-bg: oklch(0.76 0.08 215); --mock-light: oklch(0.97 0.015 220); --mock-dark: oklch(0.24 0.05 230); --mock-accent: oklch(0.58 0.13 220); --mock-accent-text: white; }
-.project-pilates { --mock-bg: oklch(0.82 0.07 140); --mock-light: oklch(0.97 0.025 125); --mock-dark: oklch(0.25 0.04 140); --mock-accent: oklch(0.58 0.11 145); --mock-accent-text: white; }
-.project-dance { --mock-bg: oklch(0.61 0.15 325); --mock-light: oklch(0.95 0.025 320); --mock-dark: oklch(0.23 0.08 320); --mock-accent: oklch(0.61 0.2 325); --mock-accent-text: white; }
-
-@media (max-width: 480px) {
-  .project-mockup { height: 220px; padding: 13px 13px 0; }
-  .mockup-body { height: 195px; }
-  .mockup-content { height: 157px; padding: 17px; }
-}
+.project-card::before { content: ""; position: absolute; inset: 0 auto auto 0; width: 0; height: 2px; background: var(--color-primary); transition: width .35s ease; }
+.project-card:hover::before { width: 100%; }
+.leadership-photo { box-shadow: 0 22px 70px color-mix(in oklab, var(--primary) 14%, transparent); }
+.leadership-photo::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 50px color-mix(in oklab, var(--primary) 10%, transparent); pointer-events: none; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
