@@ -21,6 +21,12 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import caiquePhoto from "@/assets/caique-vieira.png.asset.json";
 import professionalProfile from "@/assets/historico-profissional-caique-vieira.pdf.asset.json";
+import tocaDoPandaPreview from "@/assets/projeto-toca-do-panda.png.asset.json";
+import studioMkPreview from "@/assets/projeto-studio-mk.png.asset.json";
+import studioElegantePreview from "@/assets/projeto-studio-elegante.png.asset.json";
+import louLouPreview from "@/assets/projeto-lou-lou.png.asset.json";
+import araicasVetPreview from "@/assets/projeto-araicas-vet.png.asset.json";
+import corpilatesPreview from "@/assets/projeto-corpilates.png.asset.json";
 
 const whatsapp =
   "https://wa.me/5511967742489?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20as%20soluções%20da%20Underline!";
@@ -33,12 +39,12 @@ const navItems = [
 ];
 
 const projects = [
-  { name: "Toca do Panda Buffet", category: "Buffet & Eventos", url: "https://tocadopandabuffet.com.br/", initials: "TP", index: "01" },
-  { name: "Studio MK | Beleza Mulher", category: "Beleza & Estética", url: "https://mk-beauty-luxe.lovable.app/", initials: "MK", index: "02" },
-  { name: "Studio Elegante", category: "Beleza & Estética", url: "https://studio-elegante-booking.lovable.app", initials: "SE", index: "03" },
-  { name: "Lou Lou Pet Haven", category: "Pet Care", url: "https://lou-lou-pet-haven.lovable.app", initials: "LL", index: "04" },
-  { name: "Araicas Vet", category: "Pet Care", url: "https://araicas-vet-charm.lovable.app/", initials: "AV", index: "05" },
-  { name: "Corpilates Balance", category: "Saúde & Educação", url: "https://corpilates-balance-health.lovable.app/", initials: "CB", index: "06" },
+  { name: "Toca do Panda Buffet", category: "BUFFET & EVENTOS", url: "https://tocadopandabuffet.com.br/", image: tocaDoPandaPreview.url },
+  { name: "Studio MK | Beleza Mulher", category: "BELEZA & ESTÉTICA", url: "https://mk-beauty-luxe.lovable.app/", image: studioMkPreview.url },
+  { name: "Studio Elegante", category: "BELEZA & ESTÉTICA", url: "https://studio-elegante-booking.lovable.app", image: studioElegantePreview.url },
+  { name: "Lou Lou Pet Haven", category: "PET CARE", url: "https://lou-lou-pet-haven.lovable.app", image: louLouPreview.url },
+  { name: "Araicas Vet", category: "PET CARE", url: "https://araicas-vet-charm.lovable.app/", image: araicasVetPreview.url },
+  { name: "Corpilates Balance", category: "SAÚDE & EDUCAÇÃO", url: "https://corpilates-balance-health.lovable.app/", image: corpilatesPreview.url },
 ] as const;
 
 function Brand({ compact = false }: { compact?: boolean }) {
@@ -147,13 +153,17 @@ function Index() {
          <section id="projetos" className="scroll-mt-20 border-b border-border py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
             <SectionHeading eyebrow="TRABALHOS SELECIONADOS" title="Projetos Desenvolvidos & Casos de Sucesso" text="Páginas de alta conversão projetadas sob medida para acelerar vendas nos principais nichos de serviços." />
-             <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+             <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
                {projects.map((project) => (
-                 <article key={project.name} className="project-card group relative flex min-h-72 flex-col overflow-hidden border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 sm:p-7">
-                   <div className="flex items-start justify-between gap-4"><span className="border border-primary/30 bg-primary/5 px-2.5 py-1 text-[10px] font-bold uppercase text-primary">{project.category}</span><span className="text-xs font-bold text-muted-foreground">{project.index}</span></div>
-                   <div className="mt-10 text-5xl font-extrabold text-foreground/10 transition-colors group-hover:text-primary/20" aria-hidden="true">{project.initials}</div>
-                   <h3 className="mt-auto pt-8 text-xl font-bold leading-snug">{project.name}</h3>
-                   <a href={project.url} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center justify-between border-t border-border pt-5 text-xs font-bold text-muted-foreground transition-colors hover:text-primary" aria-label={`Acessar ${project.name} em nova aba`}>Acessar Projeto Live <ArrowUpRight className="h-4 w-4" /></a>
+                 <article key={project.name} className="project-card group relative flex flex-col overflow-hidden border border-border bg-card p-3 transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 sm:p-4">
+                   <a href={project.url} target="_blank" rel="noreferrer" className="block aspect-video overflow-hidden rounded-md bg-muted" aria-label={`Visualizar o projeto ${project.name} em nova aba`}>
+                     <img src={project.image} alt={`Preview da landing page ${project.name}`} className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.035]" loading="lazy" />
+                   </a>
+                   <div className="flex flex-1 flex-col px-2 pb-2 pt-6">
+                     <span className="w-fit border border-primary/30 bg-primary/5 px-2.5 py-1 text-[10px] font-extrabold text-primary">{project.category}</span>
+                     <h3 className="mt-4 text-xl font-bold leading-snug">{project.name}</h3>
+                     <a href={project.url} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center justify-between border-t border-border pt-5 text-xs font-bold text-muted-foreground transition-colors hover:text-primary" aria-label={`Acessar ${project.name} em nova aba`}>Acessar Projeto Live <ArrowUpRight className="h-4 w-4" /></a>
+                   </div>
                 </article>
               ))}
             </div>
