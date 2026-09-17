@@ -114,7 +114,7 @@ function Index() {
           <div className="relative mx-auto grid min-h-[680px] max-w-7xl items-center gap-16 px-5 py-20 sm:px-8 lg:grid-cols-[1.08fr_.92fr] lg:px-10">
             <div className="animate-fade-in max-w-3xl">
               <div className="mb-7 inline-flex items-center gap-2 border border-primary/30 bg-primary/5 px-3 py-2 text-xs font-bold text-primary"><span className="h-1.5 w-1.5 bg-primary" /> TECNOLOGIA & AUTOMAÇÃO COMERCIAL</div>
-               <h1 className="max-w-4xl text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-6xl xl:text-7xl">Engenharia de Vendas, Atendimento e <span className="text-primary">Presença Digital.</span></h1>
+               <h1 className="max-w-4xl text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-6xl xl:text-7xl">Ecossistema de <span className="text-primary">Atendimento</span> e <span className="text-primary">Presença Digital.</span></h1>
                <p className="mt-7 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">Desenvolvimento de páginas de alta conversão, gestão de inteligência de satisfação e soluções automatizadas para escalar seu negócio.</p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <WhatsAppButton><MessageCircle /> Solicitar Diagnóstico Gratuito</WhatsAppButton>
@@ -142,9 +142,9 @@ function Index() {
 
         <section id="servicos" className="scroll-mt-20 border-b border-border py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-            <SectionHeading eyebrow="NOSSAS SOLUÇÕES" title="Soluções Prontas para Escalar sua Operação" text="Tecnologia aplicada aos pontos que mais influenciam o crescimento do seu negócio." />
+            <SectionHeading eyebrow="NOSSAS SOLUÇÕES" title="Soluções Personalizadas para Escalar sua Operação" text="Tecnologia aplicada aos pontos que mais influenciam o crescimento do seu negócio." />
             <div className="mt-14 grid gap-5 lg:grid-cols-2">
-              <ServiceCard number="01" icon={<Code2 />} title="Desenvolvimento de Landing Pages de Alta Performance" text="Páginas responsivas, ultra-rápidas e desenhadas estrategicamente para converter visitantes em clientes qualificados via WhatsApp." tags={["UX estratégico", "Copy de conversão", "Alta performance"]} />
+              <ServiceCard number="01" icon={<Code2 />} title="Desenvolvimento de Landing Pages de Alta Performance" text="Páginas responsivas, ultra-rápidas e desenhadas estrategicamente para converter visitantes em clientes qualificados." tags={["UX estratégico", "Copy de conversão", "Alta performance"]} />
               <ServiceCard number="02" icon={<BarChart3 />} title="Pesquisa de Satisfação & Inteligência de Feedback" text="Monitore a percepção dos seus clientes em tempo real, identifique gargalos operacionais e aumente a retenção da sua base de clientes." tags={["Dados em tempo real", "Visão gerencial", "Mais retenção"]} />
             </div>
           </div>
