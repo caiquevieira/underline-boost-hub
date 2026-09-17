@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "71d355e3-72e8-4629-9808-6d813bedcf45",
-  "project_id": "219d8cf5-162b-4e11-b9ae-784e46ecb9bd",
-  "url": "/__l5e/assets-v1/71d355e3-72e8-4629-9808-6d813bedcf45/projeto-studio-elegante.png",
-  "r2_key": "a/v1/219d8cf5-162b-4e11-b9ae-784e46ecb9bd/71d355e3-72e8-4629-9808-6d813bedcf45/projeto-studio-elegante.png",
-  "original_filename": "projeto-studio-elegante.png",
-  "size": 1040569,
   "content_type": "image/png",
-  "created_at": "2026-09-11T22:09:45Z"
+  "created_at": "2026-09-11T22:09:45Z",
+  "original_filename": "projeto-studio-elegante.png",
+  "project_id": "5318f3f0-6d80-4c01-a824-c9ef585351d8",
+  "r2_key": "a/v1/5318f3f0-6d80-4c01-a824-c9ef585351d8/71d355e3-72e8-4629-9808-6d813bedcf45/projeto-studio-elegante.png",
+  "size": 1040569,
+  "url": "/__l5e/assets-v1/71d355e3-72e8-4629-9808-6d813bedcf45/projeto-studio-elegante.png",
+  "version": 1
 }

@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "e685d919-232b-46f5-aad6-c7c295e44d37",
-  "project_id": "219d8cf5-162b-4e11-b9ae-784e46ecb9bd",
-  "url": "/__l5e/assets-v1/e685d919-232b-46f5-aad6-c7c295e44d37/caique-vieira.png",
-  "r2_key": "a/v1/219d8cf5-162b-4e11-b9ae-784e46ecb9bd/e685d919-232b-46f5-aad6-c7c295e44d37/caique-vieira.png",
-  "original_filename": "caique-vieira.png",
-  "size": 297663,
   "content_type": "image/png",
-  "created_at": "2026-09-11T21:54:51Z"
+  "created_at": "2026-09-11T21:54:51Z",
+  "original_filename": "caique-vieira.png",
+  "project_id": "5318f3f0-6d80-4c01-a824-c9ef585351d8",
+  "r2_key": "a/v1/5318f3f0-6d80-4c01-a824-c9ef585351d8/e685d919-232b-46f5-aad6-c7c295e44d37/caique-vieira.png",
+  "size": 297663,
+  "url": "/__l5e/assets-v1/e685d919-232b-46f5-aad6-c7c295e44d37/caique-vieira.png",
+  "version": 1
 }
