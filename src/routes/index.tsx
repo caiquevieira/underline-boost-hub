@@ -71,9 +71,9 @@ function WhatsAppButton({ children, className }: { children: React.ReactNode; cl
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Underline | Engenharia de vendas e presença digital" },
+      { title: "Underline | Ecossistema de Atendimento e Presença Digital" },
       { name: "description", content: "Landing pages de alta conversão, inteligência de satisfação e automação comercial para acelerar sua operação." },
-      { property: "og:title", content: "Underline | Engenharia de vendas e presença digital" },
+      { property: "og:title", content: "Underline | Ecossistema de Atendimento e Presença Digital" },
       { property: "og:description", content: "Transformamos atendimento e presença digital em receita para o seu negócio." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
