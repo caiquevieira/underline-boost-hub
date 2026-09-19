@@ -19,6 +19,7 @@ import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import underlineLogo from "@/assets/underline-logo.jpg.asset.json";
 import caiquePhoto from "@/assets/caique-vieira.png.asset.json";
 import professionalProfile from "@/assets/historico-profissional-caique-vieira.pdf.asset.json";
 import tocaDoPandaPreview from "@/assets/projeto-toca-do-panda.png.asset.json";
@@ -49,13 +50,12 @@ const projects = [
 
 function Brand({ compact = false }: { compact?: boolean }) {
   return (
-    <a href="#topo" className="group flex shrink-0 items-center gap-3" aria-label="Underline — início">
-      <svg className={compact ? "h-9 w-9" : "h-10 w-10"} viewBox="0 0 48 48" role="img" aria-label="Símbolo Underline">
-        <rect width="48" height="48" rx="6" className="fill-primary" />
-        <path d="M15 12v12.5c0 6.4 3.1 10 8.8 10 3.5 0 6.1-1.5 8.2-4.3V12h-5v12.4c0 3.6-1.4 5.5-4 5.5-2.1 0-3-1.5-3-5.3V12h-5Z" className="fill-primary-foreground" />
-        <path d="M13 39h22" className="stroke-primary-foreground" strokeWidth="3" />
-      </svg>
-      <span className="text-lg font-extrabold text-foreground"><span className="text-primary">Under</span>line.</span>
+    <a href="#topo" className="flex shrink-0 items-center" aria-label="Underline — início">
+      <img
+        src={underlineLogo.url}
+        alt="Underline"
+        className={cn("rounded-sm object-cover", compact ? "h-12 w-12" : "h-14 w-14")}
+      />
     </a>
   );
 }
