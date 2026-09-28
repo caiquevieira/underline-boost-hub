@@ -19,15 +19,15 @@ import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import underlineLogo from "@/assets/underline-logo.jpg.asset.json";
-import caiquePhoto from "@/assets/caique-vieira.png.asset.json";
-import professionalProfile from "@/assets/historico-profissional-caique-vieira.pdf.asset.json";
-import tocaDoPandaPreview from "@/assets/projeto-toca-do-panda.png.asset.json";
-import studioMkPreview from "@/assets/projeto-studio-mk.png.asset.json";
-import studioElegantePreview from "@/assets/projeto-studio-elegante.png.asset.json";
-import louLouPreview from "@/assets/projeto-lou-lou.png.asset.json";
-import araicasVetPreview from "@/assets/projeto-araicas-vet.png.asset.json";
-import corpilatesPreview from "@/assets/projeto-corpilates.png.asset.json";
+import underlineLogo from "@/assets/underline-logo.jpg";
+import caiquePhoto from "@/assets/caique-vieira.png";
+import professionalProfile from "@/assets/historico-profissional-caique-vieira.pdf";
+import tocaDoPandaPreview from "@/assets/projeto-toca-do-panda.png";
+import studioMkPreview from "@/assets/projeto-studio-mk.png";
+import studioElegantePreview from "@/assets/projeto-studio-elegante.png";
+import louLouPreview from "@/assets/projeto-lou-lou.png";
+import araicasVetPreview from "@/assets/projeto-araicas-vet.png";
+import corpilatesPreview from "@/assets/projeto-corpilates.png";
 
 const whatsapp =
   "https://wa.me/5511967742489?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20as%20soluções%20da%20Underline!";
@@ -40,19 +40,19 @@ const navItems = [
 ];
 
 const projects = [
-  { name: "Toca do Panda Buffet", category: "BUFFET & EVENTOS", url: "https://tocadopandabuffet.com.br/", image: tocaDoPandaPreview.url },
-  { name: "Studio MK | Beleza Mulher", category: "BELEZA & ESTÉTICA", url: "https://mk-beauty-luxe.lovable.app/", image: studioMkPreview.url },
-  { name: "Studio Elegante", category: "BELEZA & ESTÉTICA", url: "https://studio-elegante-booking.lovable.app", image: studioElegantePreview.url },
-  { name: "Lou Lou Pet Haven", category: "PET CARE", url: "https://lou-lou-pet-haven.lovable.app", image: louLouPreview.url },
-  { name: "Araicas Vet", category: "PET CARE", url: "https://araicas-vet-charm.lovable.app/", image: araicasVetPreview.url },
-  { name: "Corpilates Balance", category: "SAÚDE & EDUCAÇÃO", url: "https://corpilates-balance-health.lovable.app/", image: corpilatesPreview.url },
+  { name: "Toca do Panda Buffet", category: "BUFFET & EVENTOS", url: "https://tocadopandabuffet.com.br/", image: tocaDoPandaPreview },
+  { name: "Studio MK | Beleza Mulher", category: "BELEZA & ESTÉTICA", url: "https://mk-beauty-luxe.lovable.app/", image: studioMkPreview },
+  { name: "Studio Elegante", category: "BELEZA & ESTÉTICA", url: "https://studio-elegante-booking.lovable.app", image: studioElegantePreview },
+  { name: "Lou Lou Pet Haven", category: "PET CARE", url: "https://lou-lou-pet-haven.lovable.app", image: louLouPreview },
+  { name: "Araicas Vet", category: "PET CARE", url: "https://araicas-vet-charm.lovable.app/", image: araicasVetPreview },
+  { name: "Corpilates Balance", category: "SAÚDE & EDUCAÇÃO", url: "https://corpilates-balance-health.lovable.app/", image: corpilatesPreview },
 ] as const;
 
 function Brand({ compact = false }: { compact?: boolean }) {
   return (
     <a href="#topo" className="flex shrink-0 items-center" aria-label="Underline — início">
       <img
-        src={underlineLogo.url}
+        src={underlineLogo}
         alt="Underline"
         className={cn("rounded-sm object-cover", compact ? "h-12 w-12" : "h-14 w-14")}
       />
@@ -172,8 +172,8 @@ function Index() {
 
          <section id="lideranca" className="scroll-mt-20 border-b border-border bg-secondary/25 py-24 sm:py-32">
            <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-5 sm:px-8 lg:grid-cols-12 lg:px-10">
-             <div className="lg:col-span-4"><div className="leadership-photo relative overflow-hidden rounded-lg border border-primary/30"><img src={caiquePhoto.url} alt="Retrato profissional de Caíque Vieira" className="aspect-square w-full object-cover grayscale" loading="lazy" /></div></div>
-             <div className="lg:col-span-8 lg:pl-10"><span className="section-kicker">LIDERANÇA E ENGENHARIA DE PROCESSOS</span><h2 className="mt-5 text-4xl font-extrabold sm:text-5xl">Caíque Vieira</h2><p className="mt-3 text-base font-bold leading-7 text-primary sm:text-lg">Founder & Lead Strategist na Underline | Gerente de Projetos & Especialista em CX/BI</p><p className="mt-6 max-w-3xl text-base leading-8 text-muted-foreground sm:text-lg">Mais de 10 anos liderando governança de projetos, estruturação de operações de alta complexidade em BPO e inteligência de dados. A Underline nasce da união entre estratégia operacional de grande porte, automação de processos e arquitetura de páginas focadas em geração de receita real.</p><div className="mt-7 flex flex-wrap gap-2">{["Gestão de Projetos", "Power BI & Dataverse", "Six Sigma Yellow Belt", "Automação B2B"].map((skill) => <span key={skill} className="border border-border bg-background px-3 py-2 text-xs font-semibold text-muted-foreground">{skill}</span>)}</div><Button asChild variant="outline" size="lg" className="mt-8 h-auto min-h-12 whitespace-normal rounded-sm border-primary/40 bg-transparent px-5 py-3 text-left font-bold hover:bg-primary hover:text-primary-foreground"><a href={professionalProfile.url} download="Historico-Profissional-Caique-Vieira.pdf"><Download /> Download do Histórico Profissional (PDF)</a></Button></div>
+             <div className="lg:col-span-4"><div className="leadership-photo relative overflow-hidden rounded-lg border border-primary/30"><img src={caiquePhoto} alt="Retrato profissional de Caíque Vieira" className="aspect-square w-full object-cover grayscale" loading="lazy" /></div></div>
+             <div className="lg:col-span-8 lg:pl-10"><span className="section-kicker">LIDERANÇA E ENGENHARIA DE PROCESSOS</span><h2 className="mt-5 text-4xl font-extrabold sm:text-5xl">Caíque Vieira</h2><p className="mt-3 text-base font-bold leading-7 text-primary sm:text-lg">Founder & Lead Strategist na Underline | Gerente de Projetos & Especialista em CX/BI</p><p className="mt-6 max-w-3xl text-base leading-8 text-muted-foreground sm:text-lg">Mais de 10 anos liderando governança de projetos, estruturação de operações de alta complexidade em BPO e inteligência de dados. A Underline nasce da união entre estratégia operacional de grande porte, automação de processos e arquitetura de páginas focadas em geração de receita real.</p><div className="mt-7 flex flex-wrap gap-2">{["Gestão de Projetos", "Power BI & Dataverse", "Six Sigma Yellow Belt", "Automação B2B"].map((skill) => <span key={skill} className="border border-border bg-background px-3 py-2 text-xs font-semibold text-muted-foreground">{skill}</span>)}</div><Button asChild variant="outline" size="lg" className="mt-8 h-auto min-h-12 whitespace-normal rounded-sm border-primary/40 bg-transparent px-5 py-3 text-left font-bold hover:bg-primary hover:text-primary-foreground"><a href={professionalProfile} download="Historico-Profissional-Caique-Vieira.pdf"><Download /> Download do Histórico Profissional (PDF)</a></Button></div>
           </div>
         </section>
 

@@ -80,6 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Underline" },
       { name: "description", content: "Tecnologia e automação comercial orientadas a resultado." },
       { name: "author", content: "Underline" },
+      { name: "robots", content: "noindex, nofollow" },
       { property: "og:title", content: "Underline" },
       { property: "og:description", content: "Tecnologia e automação comercial orientadas a resultado." },
       { property: "og:type", content: "website" },
@@ -90,7 +91,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "icon", href: "/underline-boost-hub/favicon.png", type: "image/png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
